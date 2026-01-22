@@ -115,6 +115,7 @@ Live URL: https://exohabitai-backend.onrender.com
 
 Note: Initial load may take a few seconds as the free instance spins up.
 
+
 ## Future Improvements (Optional Ideas)
 
 Add more features (stellar metallicity, planet radius, eccentricity…)

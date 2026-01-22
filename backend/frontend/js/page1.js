@@ -183,11 +183,11 @@ function setupEventListeners() {
     
     // Export buttons
     document.getElementById("exportExcel")?.addEventListener("click", function() {
-        window.open("http://127.0.0.1:5000/export/excel", "_blank");
+        window.open("/export/excel", "_blank");
     });
 
     document.getElementById("exportPDF")?.addEventListener("click", function() {
-        window.open("http://127.0.0.1:5000/export/pdf", "_blank");
+        window.open("/export/pdf", "_blank");
     });
 }
 
@@ -210,7 +210,7 @@ async function handlePrediction(e) {
     };
 
     try {
-        const predictResponse = await fetch("http://127.0.0.1:5000/predict", {
+        const predictResponse = await fetch("/predict", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
@@ -291,7 +291,7 @@ async function handleSaveToRanking() {
     console.log("Saving payload:", savePayload);
 
     try {
-        const response = await fetch("http://127.0.0.1:5000/add_planet", {
+        const response = await fetch("/add_planet", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(savePayload)
@@ -393,7 +393,7 @@ function updateAnalysisText(result) {
 }
 async function loadRankingData() {
     try {
-        const res = await fetch("http://127.0.0.1:5000/ranking");
+        const res = await fetch("/ranking");
         if (!res.ok) throw new Error(`Failed to fetch ranking: ${res.status}`);
 
         const planets = await res.json();
@@ -436,7 +436,7 @@ async function loadRankingData() {
     }
 }async function loadAnalyticsCharts() {
     try {
-        const resp = await fetch("http://127.0.0.1:5000/analytics_charts");
+        const resp = await fetch("/analytics_charts");
         if (!resp.ok) throw new Error("Charts fetch failed");
 
         const data = await resp.json();

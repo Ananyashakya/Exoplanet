@@ -111,7 +111,7 @@ StandardScaler
 
 The project is deployed on Render and accessible at:
 
-Live URL: https://<your-render-app>.onrender.com
+Live URL: https://exohabitai-backend.onrender.com
 
 Note: Initial load may take a few seconds as the free instance spins up.
 
